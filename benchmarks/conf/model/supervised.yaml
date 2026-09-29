@@ -68,6 +68,9 @@ params:
   imagenette:
     batch_size: 128
     max_epochs: 150
+  imagewoof:
+    batch_size: 128
+    max_epochs: 5
 
   # ----- new datasets (auto-inserted, paper tier rule) -----
   # 1× ImageNet base

@@ -142,6 +142,7 @@ DATASET_CONFIGS: dict[str, DatasetConfig] = {
     "food101": _rgb("food101", "Food-101", 101),
     "imagenet": _rgb("imagenet", "ImageNet", 1000, builder_name="ImageNet1K", include_in_results=False),
     "imagenette": _rgb("imagenette", "Imagenette", 10),
+    "imagewoof": _rgb("imagewoof", "Imagewoof", 10),
     "rockpaperscissor": _rgb("rockpaperscissor", "Rock-Paper-Scissors", 3),
     "stl10": _rgb("stl10", "STL-10", 10, mean=[0.4467, 0.4398, 0.4066], std=[0.2603, 0.2566, 0.2713]),
     "svhn": _rgb("svhn", "SVHN", 10, mean=[0.4377, 0.4438, 0.4728], std=[0.1980, 0.2010, 0.1970]),
