@@ -43,6 +43,15 @@ params:
     batch_size: 128
     max_epochs: 150
   # Small fine-grained — tier 6 (×6)
+  flowers17:
+    batch_size: 128
+    max_epochs: 300
+  flowers17_partition2:
+    batch_size: 128
+    max_epochs: 300
+  flowers17_partition3:
+    batch_size: 128
+    max_epochs: 300
   flowers102:
     batch_size: 128
     max_epochs: 300

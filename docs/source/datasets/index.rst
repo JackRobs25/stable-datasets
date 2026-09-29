@@ -62,6 +62,7 @@ Available Datasets
    tiny_imagenet_c
    e_mnist
    fgvc_aircraft
+   flowers17
    flowers102
    food101
    cub200

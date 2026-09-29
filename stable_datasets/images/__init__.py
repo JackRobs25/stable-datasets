@@ -24,6 +24,7 @@ from .fashion_mnist import FashionMNIST
 
 # from .celeb_a import CelebA
 from .fgvc_aircraft import FGVCAircraft
+from .flowers17 import Flowers17
 from .flowers102 import Flowers102
 from .food101 import Food101
 from .galaxy10 import Galaxy10Decal
@@ -70,6 +71,7 @@ __all__ = [
     "FacePointing",
     "FashionMNIST",
     "FGVCAircraft",
+    "Flowers17",
     "Flowers102",
     "Galaxy10Decal",
     "Food101",
