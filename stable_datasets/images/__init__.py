@@ -31,6 +31,7 @@ from .hasy_v2 import HASYv2
 from .imagenet_1k import ImageNet1K
 from .imagenet_10 import Imagenette
 from .imagenet_100 import ImageNet100
+from .imagewoof import Imagewoof
 from .k_mnist import KMNIST
 from .linnaeus5 import Linnaeus5
 from .med_mnist import MedMNIST
@@ -77,6 +78,7 @@ __all__ = [
     "ImageNet1K",
     "ImageNet100",
     "Imagenette",
+    "Imagewoof",
     "KMNIST",
     "Linnaeus5",
     "MedMNIST",

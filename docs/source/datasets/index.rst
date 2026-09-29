@@ -63,6 +63,7 @@ Available Datasets
    e_mnist
    fgvc_aircraft
    flowers102
+   imagewoof
    food101
    cub200
    country211
