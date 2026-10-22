@@ -138,11 +138,7 @@ DATASET_CONFIGS: dict[str, DatasetConfig] = {
         builder_name="FGVCAircraft",
         builder_kwargs={"config_name": "manufacturer"},
     ),
-    "flowers17": _rgb(
-        "flowers17", 
-        "Flowers-17 (Partition 1)", 
-        17, 
-        builder_kwargs={"config_name": "partition1"}),
+    "flowers17": _rgb("flowers17", "Flowers-17 (Partition 1)", 17, builder_kwargs={"config_name": "partition1"}),
     "flowers17_partition2": _rgb(
         "flowers17_partition2",
         "Flowers-17 (Partition 2)",

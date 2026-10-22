@@ -20,6 +20,11 @@ The partitions are alternative assignments of the same images, so images may
 appear in different splits across partitions. The original paper reports results
 averaged over the three partitions; a single-partition result is not that protocol.
 
+.. image:: teasers/flowers17_teaser.png
+   :alt: Training images from five Oxford Flowers-17 categories, with class labels.
+   :align: center
+   :width: 90%
+
 Data Structure
 --------------
 
