@@ -10,6 +10,11 @@ The archive's ``val`` directory is exposed as ``validation``. There is no test
 split. The supplied noisy-label CSV is ignored. The 160px and 320px releases
 are not configurations of this builder.
 
+.. image:: teasers/imagewoof_teaser.png
+   :alt: Training images from five Imagewoof dog classes, with ImageNet class identifiers.
+   :align: center
+   :width: 90%
+
 Usage
 -----
 
