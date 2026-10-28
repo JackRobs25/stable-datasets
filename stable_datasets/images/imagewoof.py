@@ -16,8 +16,7 @@ from stable_datasets.schema import (
     Image,
     Version,
 )
-from stable_datasets.splits import Split, SplitGenerator
-from stable_datasets.utils import BaseDatasetBuilder, download
+from stable_datasets.utils import BaseDatasetBuilder
 
 
 # Fixed label order, verified against both split directories in imagewoof2.tgz.
@@ -43,7 +42,8 @@ class Imagewoof(BaseDatasetBuilder):
     SOURCE = DatasetSource(
         homepage="https://github.com/fastai/imagenette#imagewoof",
         assets={
-            "archive": DownloadInfo(url="https://s3.amazonaws.com/fast-ai-imageclas/imagewoof2.tgz"),
+            "train": DownloadInfo(url="https://s3.amazonaws.com/fast-ai-imageclas/imagewoof2.tgz"),
+            "val": DownloadInfo(url="https://s3.amazonaws.com/fast-ai-imageclas/imagewoof2.tgz"),
         },
         citation="""@software{Howard_Imagewoof_2019,
             title={Imagewoof: a subset of 10 classes from Imagenet that aren't so easy to classify},
@@ -64,18 +64,6 @@ class Imagewoof(BaseDatasetBuilder):
             homepage=self.SOURCE["homepage"],
             citation=self.SOURCE["citation"],
         )
-
-    def _candidate_splits(self) -> list[str]:
-        """Look up processed splits before requesting the shared raw archive."""
-        return [Split.TRAIN, Split.VALIDATION]
-
-    def _split_generators(self) -> list[SplitGenerator]:
-        """Download once and preserve the official train/validation membership."""
-        archive_path = download(self.SOURCE["assets"]["archive"], dest_folder=self._raw_download_dir)
-        return [
-            SplitGenerator(name=Split.TRAIN, gen_kwargs={"data_path": archive_path, "split": "train"}),
-            SplitGenerator(name=Split.VALIDATION, gen_kwargs={"data_path": archive_path, "split": "val"}),
-        ]
 
     def _generate_examples(self, data_path: str | Path, split: str) -> Iterator[tuple[str, dict[str, object]]]:
         """Read image members in place, convert to RGB, and map directory labels."""

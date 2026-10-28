@@ -41,40 +41,6 @@ Labels follow this fixed order of ImageNet class identifiers:
     0 n02086240    1 n02087394    2 n02088364    3 n02089973    4 n02093754
     5 n02096294    6 n02099601    7 n02105641    8 n02111889    9 n02115641
 
-Caching
--------
-
-The existing download utility stores the shared archive once. The base builder
-prepares both splits on the first load, even if a single split is requested.
-Subsequent loads with both processed splits present reopen them without invoking
-the downloader or image generator. Decoded RGB images use the library's image
-codec and Arrow cache; lossless encoding can require more disk space than the
-source JPEG archive. The archive is read directly without extracting its files.
-
-Set ``STABLE_DATASETS_CACHE_DIR`` to choose a cache root, or pass ``download_dir``
-and ``processed_cache_dir`` explicitly. Only ``config_name="default"`` is supported.
-
-Dataset test
-------------
-
-From the repository root in an installed development environment:
-
-.. code-block:: bash
-
-    python -m pytest -q stable_datasets/tests/images/test_imagewoof.py
-
-This integration test loads the official full-resolution archive, following the
-Flowers102 and Tiny ImageNet test pattern. It checks the full training and
-validation counts, plus the first training sample's fields, RGB image type,
-array dimensions/dtype, and label range.
-
-Set ``STABLE_DATASETS_CACHE_DIR`` to an appropriate data directory before running.
-A cold run downloads the archive if needed and decodes images while preparing
-both processed splits. Later runs reuse those caches. This test can require
-substantial disk space and processing time; it is not an offline fixture test.
-It does not exhaustively verify class mapping, invalid inputs, or cache bypass
-behavior. It does not cover batching or model metrics.
-
 Source and citation
 -------------------
 
